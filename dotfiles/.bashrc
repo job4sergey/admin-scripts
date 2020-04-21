@@ -179,11 +179,13 @@ alias catcp="$SCRIPTS_DIR/cat_file_to_clipboard.sh"
 
 alias mc='EDITOR=/home/lsa/dist/text/sublime_text_3/sublime_text mc'
 
-alias vimp="perl ~/vimp.pl "
+alias vimp="$SCRIPTS_DIR/vimp.sh"
 alias shh="perl ~/shh.pl"
 alias tare='tar xfv'
+alias uzi='unzip '
 alias findn='find . -name'
 alias fin='$SCRIPTS_DIR/find_by_ext.sh'
 alias grswn='grep -Rswn '
 alias k3='kdiff3'
 alias send_ttyUSB0='cat $FFILE | pv -s `du -b -s $FFILE | cut -f1`  > /dev/ttyUSB0'
+alias cd2='cd `xclip -sel c -o`'
