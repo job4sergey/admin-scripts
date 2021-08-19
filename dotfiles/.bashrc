@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# ~/.bashrc: executed by bash(1) for non-login shells. 
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 alias s=/home/lsa/dist/text/sublime_text_3/sublime_text
+alias v=/usr/share/code/code 
 
 
 _pyval() {
@@ -173,6 +174,8 @@ alias openit2="$SCRIPTS_DIR/explorerit.sh"
 alias cp2="$SCRIPTS_DIR/cp_to_cd.sh"
 alias cpd2="$SCRIPTS_DIR/cp_dir_to_cd.sh"
 alias mv2="$SCRIPTS_DIR/mv_to_cd.sh"
+alias mv2d="$SCRIPTS_DIR/mvd_to_cd.sh"
+alias mv2dy="$SCRIPTS_DIR/mvd_to_cd.sh y"
 alias cpf="$SCRIPTS_DIR/absolute_path_to_clipboard.sh" 
 alias cpfl="ls -Art | tail -n 1 | xargs -0 $SCRIPTS_DIR/absolute_path_to_clipboard.sh" 
 alias cn="$SCRIPTS_DIR/file_name_to_clipboard.sh" 
@@ -185,11 +188,30 @@ alias mc='EDITOR=/home/lsa/dist/text/sublime_text_3/sublime_text mc'
 alias vimp="$SCRIPTS_DIR/vimp.sh"
 alias shh="perl ~/shh.pl"
 alias tare='tar xfv'
+alias tarc='tar cfvz'
 alias uzi='unzip '
 alias findn='find . -name'
-alias fin='$SCRIPTS_DIR/find_by_ext.sh'
+alias fin="$SCRIPTS_DIR/find_by_ext.sh"
 alias grswn='grep -Rswn '
 alias k3='kdiff3'
 alias send_ttyUSB0='cat $FFILE | pv -s `du -b -s $FFILE | cut -f1`  > /dev/ttyUSB0'
 alias cd2='cd "`xclip -sel c -o`"'
 alias md5='md5sum '
+alias clipimg="$SCRIPTS_DIR/pasteimg.py"
+
+alias ffprobe_json='ffprobe  -v quiet  -print_format json -show_format -show_streams '
+alias meinf='mediainfo '
+alias meee='mediainfo '
+
+tst_fn() {
+   echo "<--$1-->"
+}
+
+vv() {
+    nohup "vlc \"$1\""
+}
+
+alias mvn=$HOME/dist/java/mvn/apache-maven-3.6.3/bin/mvn
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
