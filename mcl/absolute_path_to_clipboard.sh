@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # args=("$@")
 file=$*
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"

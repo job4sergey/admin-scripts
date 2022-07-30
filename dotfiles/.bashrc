@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells. 
+# ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -116,9 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias s=/home/lsa/dist/text/sublime_text_3/sublime_text
+alias s="/usr/bin/subl"
 alias v=/usr/share/code/code 
-
 
 _pyval() {
     local python_cmd="print $@"
@@ -166,7 +165,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias p3='python3'
 
-SCRIPTS_DIR=/home/lsa/src/admin-scripts/mcl
+SCRIPTS_DIR="$HOME/src/admin-scripts/mcl"
 
 alias clipit="$SCRIPTS_DIR/clipit.sh"
 alias openit="$SCRIPTS_DIR/explorerit.sh ."
@@ -176,6 +175,7 @@ alias cpd2="$SCRIPTS_DIR/cp_dir_to_cd.sh"
 alias mv2="$SCRIPTS_DIR/mv_to_cd.sh"
 alias mv2d="$SCRIPTS_DIR/mvd_to_cd.sh"
 alias mv2dy="$SCRIPTS_DIR/mvd_to_cd.sh y"
+alias mvd="$SCRIPTS_DIR/mvd_to_cd.sh y"
 alias cpf="$SCRIPTS_DIR/absolute_path_to_clipboard.sh" 
 alias cpfl="ls -Art | tail -n 1 | xargs -0 $SCRIPTS_DIR/absolute_path_to_clipboard.sh" 
 alias cn="$SCRIPTS_DIR/file_name_to_clipboard.sh" 
@@ -183,7 +183,7 @@ alias cdcp="$SCRIPTS_DIR/cd_to_clipboard.sh"
 alias clcp="$SCRIPTS_DIR/command_line_to_clipboard.sh" 
 alias catcp="$SCRIPTS_DIR/cat_file_to_clipboard.sh"
 
-alias mc='EDITOR=/home/lsa/dist/text/sublime_text_3/sublime_text mc'
+alias mc='EDITOR=subl mc'
 
 alias vimp="$SCRIPTS_DIR/vimp.sh"
 alias shh="perl ~/shh.pl"
@@ -203,6 +203,19 @@ alias ffprobe_json='ffprobe  -v quiet  -print_format json -show_format -show_str
 alias meinf='mediainfo '
 alias meee='mediainfo '
 
+# START java stuff
+
+export M2_HOME="$HOME/distr/dev/java/mvn/apache-maven-3.8.3/"
+export MAVEN_HOME="$HOME/distr/dev/java/mvn/apache-maven-3.8.3/"
+
+alias mvn="$M2_HOME/bin/mvn"
+
+export GRADLE_HOME="$HOME/distr/dev/java/gradle/gradle-7.2"
+alias gradle="$GRADLE_HOME/bin/gradle"
+alias gitui="gitk > /dev/null 2>&1 &"
+
+# END java stuff
+
 tst_fn() {
    echo "<--$1-->"
 }
@@ -211,7 +224,6 @@ vv() {
     nohup "vlc \"$1\""
 }
 
-alias mvn=$HOME/dist/java/mvn/apache-maven-3.6.3/bin/mvn
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

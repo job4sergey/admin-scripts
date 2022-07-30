@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import pygtk
 import gtk
@@ -47,14 +47,14 @@ class PasteImg:
             
         else:
             # Wrong extension
-            print "Error: Unknown file extension '%s'" % extension
+            print("Error: Unknown file extension '%s'" % extension)
             sys.exit()
 
         # Save clipboard image to file
         if pixbuf is None:
-            print 'No image available!'
+            print('No image available!')
         else:
-            print 'Saving clipboard image to file(%s): %s.%s' % (imgType, shortname, fileExt)
+            print('Saving clipboard image to file(%s): %s.%s' % (imgType, shortname, fileExt))
             pixbuf.save('%s.%s' % (shortname, fileExt) , imgType)
         
         self.exitPasteImg()
