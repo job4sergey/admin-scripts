@@ -203,6 +203,18 @@ alias ffprobe_json='ffprobe  -v quiet  -print_format json -show_format -show_str
 alias meinf='mediainfo '
 alias meee='mediainfo '
 
+pawf() {
+    perl -F"$1" -lan "$2"
+}
+
+pawfd() {
+    perl -d -F"$1" -lan "$2"
+}
+
+pawk() {
+    perl -F"$1" -lane "$2"
+}
+
 # START java stuff
 
 export M2_HOME="$HOME/distr/dev/java/mvn/apache-maven-3.8.3/"
