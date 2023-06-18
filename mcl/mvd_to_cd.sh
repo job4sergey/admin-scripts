@@ -19,7 +19,7 @@ else
 fi
 
 if [ "$#" -eq 1 ]; then  
-  mv "$path" $curd
+  mv "$path" "$curd"
   echo "Moved."
   cd $curd
   curn=$(basename -- "$path")  
