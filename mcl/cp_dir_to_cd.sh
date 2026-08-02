@@ -1,8 +1,8 @@
 #!/bin/sh
 
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+. "${HOME}/.admin_script"
 
-path=`xclip -sel c -o`
+path=$(sh -c "$CLIPBOARD_PASTE")
 
 cp -R "$path" .
 

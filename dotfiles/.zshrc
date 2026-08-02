@@ -192,7 +192,7 @@ alias clcp="$SCRIPTS_DIR/command_line_to_clipboard.sh"
 alias catcp="$SCRIPTS_DIR/cat_file_to_clipboard.sh"
 
 alias mc='EDITOR=subl mc'
-alias sublrc='subl ~/.zshrc'
+alias sublrc='subl ~/.bashrc'
 
 alias vimp="$SCRIPTS_DIR/vimp.sh"
 alias shh="perl ~/shh.pl"

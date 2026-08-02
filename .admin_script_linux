@@ -1,0 +1,6 @@
+# Platform commands for Linux. Symlink or copy to ~/.admin_script:
+#   ln -sf ~/src/admin-scripts/.admin_script_linux ~/.admin_script
+
+CLIPBOARD_PASTE='xclip -sel c -o'
+CLIPBOARD_COPY='cat %s | xclip -sel c'
+OPEN_CMD='xdg-open %s > /dev/null 2>&1'

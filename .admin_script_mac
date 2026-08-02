@@ -1,0 +1,6 @@
+# Platform commands for macOS. Symlink or copy to ~/.admin_script:
+#   ln -sf ~/src/admin-scripts/.admin_script_mac ~/.admin_script
+
+CLIPBOARD_PASTE='pbpaste'
+CLIPBOARD_COPY='cat %s | pbcopy'
+OPEN_CMD='open %s > /dev/null 2>&1'
