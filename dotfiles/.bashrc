@@ -236,6 +236,80 @@ vv() {
     nohup "vlc \"$1\""
 }
 
+export KN5SPACE=`cat ~/.kn5space`
+
+set_ns() {
+    if [ -n "$1" ]; then
+        echo "$1" > ~/.kn5space
+    fi
+    export KN5SPACE=$(cat ~/.kn5space)
+}
+
+set_ns  
+
+alias k="kubectl "
+
+kpods() {
+    if [ -z "$1" ]; then
+        kubectl get pods -n $KN5SPACE
+    else
+        kubectl get pods -n $KN5SPACE | grep "$1"
+    fi
+}
+
+kdeploys() {
+    if [ -z "$1" ]; then
+        kubectl get deployments -n $KN5SPACE
+    else
+        kubectl get deployments -n $KN5SPACE | grep "$1"
+    fi
+    
+}
+
+kobjs() {
+    if [ -z "$1" ]; then
+        echo "usage: kobs OBJ_KIND [filter expression]"
+    else
+        if [ -n "$2" ]; then
+            kubectl get "$1" -n $KN5SPACE | grep -P "$2"
+        else
+            kubectl get "$1" -n $KN5SPACE
+        fi    
+    fi
+}
+
+kpodit() {
+    if [ -z "$1" ]; then
+        echo "usage: podit POD"
+    else
+        kubectl -n $KN5SPACE exec -it "$1" -- sh
+    fi
+}
+
+kpodex() {
+    if [ -z "$1" ] || [ -z "$2" ]; then
+        echo "usage: kpodex POD COMMAND"
+    else
+        kubectl exec -n $KN5SPACE -it "$1" -- "$2"
+    fi    
+}
+
+kpodlogf() {
+    if [ -z "$1" ]; then
+        echo "usage: kpodlogf POD"
+    else
+        kubectl -n $KN5SPACE logs -f "$1"
+    fi
+}
+
+kpodlogle() {
+    if [ -z "$1" ]; then
+        echo "usage: kpodlogle POD"
+    else
+        kubectl -n $KN5SPACE logs "$1" | less
+    fi
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
