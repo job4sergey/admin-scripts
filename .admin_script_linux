@@ -4,3 +4,4 @@
 CLIPBOARD_PASTE='xclip -sel c -o'
 CLIPBOARD_COPY='cat %s | xclip -sel c'
 OPEN_CMD='xdg-open %s > /dev/null 2>&1'
+DIFF_CMD='kdiff3'

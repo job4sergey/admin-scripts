@@ -4,3 +4,4 @@
 CLIPBOARD_PASTE='pbpaste'
 CLIPBOARD_COPY='cat %s | pbcopy'
 OPEN_CMD='open %s > /dev/null 2>&1'
+DIFF_CMD='kdiff3'

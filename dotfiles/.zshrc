@@ -185,6 +185,7 @@ alias mv2d="$SCRIPTS_DIR/mvd_to_cd.sh"
 alias mv2dy="$SCRIPTS_DIR/mvd_to_cd.sh y"
 alias mvd="$SCRIPTS_DIR/mvd_to_cd.sh y"
 alias cpf="$SCRIPTS_DIR/absolute_path_to_clipboard.sh" 
+alias cpff="$SCRIPTS_DIR/mc_absolute_path_to_clipboard.sh"
 alias cpfl="ls -Art | tail -n 1 | xargs -0 $SCRIPTS_DIR/absolute_path_to_clipboard.sh" 
 alias cn="$SCRIPTS_DIR/file_name_to_clipboard.sh" 
 alias cdcp="$SCRIPTS_DIR/cd_to_clipboard.sh"
@@ -213,6 +214,7 @@ alias grsn='grep -Risn '
 alias gg='git grep '
 alias ggn='git grep -n'
 alias k3='kdiff3'
+alias k33="$SCRIPTS_DIR/mc_kdiff3.sh"
 alias send_ttyUSB0='cat $FFILE | pv -s `du -b -s $FFILE | cut -f1`  > /dev/ttyUSB0'
 # alias cd2='AAAA=`xclip -sel c -o`; cd `$SCRIPTS_DIR/get_dirname.py $AAAA`'
 alias cd2='AAAA=$1; cd `$SCRIPTS_DIR/cd2_dst.py $AAAA`'
