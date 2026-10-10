@@ -165,7 +165,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias p3='python3'
 
-SCRIPTS_DIR="$HOME/src/admin-scripts/mcl"
+export SCRIPTS_DIR="$HOME/src/admin-scripts/mcl"
 
 alias clipit="$SCRIPTS_DIR/clipit.sh"
 alias openit="$SCRIPTS_DIR/explorerit.sh ."

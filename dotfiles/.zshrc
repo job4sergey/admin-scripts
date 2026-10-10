@@ -172,7 +172,7 @@ alias l='ls -CF'
 alias p3='python3'
 alias p2='python2'
 
-SCRIPTS_DIR="$HOME/src/admin-scripts/mcl"
+export SCRIPTS_DIR="$HOME/src/admin-scripts/mcl"
 VS_CODE_DIR=/home/slapukhov/distr/dev/vs_code/VSCode-linux-x64
 
 alias clipit="$SCRIPTS_DIR/clipit.sh"
