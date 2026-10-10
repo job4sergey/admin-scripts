@@ -2,7 +2,7 @@
 
 . "${HOME}/.admin_script"
 
-path=$(sh -c "$CLIPBOARD_PASTE")
+path=$($CLIPBOARD_PASTE)
 
 cp "$path" .
 
